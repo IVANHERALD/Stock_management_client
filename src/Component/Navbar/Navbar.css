@@ -1,0 +1,52 @@
+body{
+    display: flex;
+}
+.navbar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #292A39; /* dark background for the navbar */
+    padding: 20px 0;
+    height: 100vh;
+    width: 80px; /* narrow width for vertical navbar */
+}
+
+.logo_div {
+    margin-bottom: 40px; /* space between logo and icons */
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+    background-color: rgb(92, 193, 244); /* You can remove this if not needed */
+    border-radius: 50%;
+}
+
+.nav_items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* space between nav items */
+}
+
+.nav_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.nav_item:hover {
+    background-color: #333333; /* hover effect */
+    border-left: 4px solid #00BFFF;
+}
+
+.icon {
+    font-size: 35px;
+}
+
+.nav_item span {
+    font-size: 12px;
+    margin-top: 5px;
+}

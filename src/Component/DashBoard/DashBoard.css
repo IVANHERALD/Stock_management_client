@@ -1,0 +1,7 @@
+.dashboard{
+    display: flex;
+    flex-direction: column;
+     /* Adjust this value to set the desired space between elements */
+    align-items: center; /* Optional: center align the items */
+    padding: 50px;
+}
