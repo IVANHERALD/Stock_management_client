@@ -1,10 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import Navbar from './Component/Navbar/Navbar';
-import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+
+import AdminDashBoard from './Component/AdminDashboard/AdminDashBoard';
 import DashBoard from './Component/DashBoard/DashBoard';
 import Inventory from './Component/Inventory/Inventory';
-import AdminDashBoard from './Component/AdminDashboard/AdminDashBoard';
+import MailVendor from './Component/Vendor/MailVendor/MailVendor';
+import Navbar from './Component/Navbar/Navbar';
 function App() {
   return (
     <div className="App">
@@ -15,6 +17,7 @@ function App() {
         <Route path="/" element={<DashBoard/>}/>
         <Route path="/Inventory" element={<Inventory/>}/>
         <Route path="/AdminDashboard" element={<AdminDashBoard/>}/>
+        <Route path="/MailVendor" element={<MailVendor/>}/>
         </Routes>
         </div>
       </Router>

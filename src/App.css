@@ -3,6 +3,6 @@
   padding: 20px;
   width: 100%; /* take up the remaining width */
   height: 100vh; /* optional, ensures content fills the height */
-  position: fixed; /* ensures scrolling if content overflows */
-  background-color: #e2e1e1; /* match body background color */
+   /* ensures scrolling if content overflows */
+  background-color: #ffff; /* match body background color */
 }
