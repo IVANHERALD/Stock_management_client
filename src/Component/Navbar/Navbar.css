@@ -6,7 +6,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #292A39; /* dark background for the navbar */
+    background-color: #3e3d3d; /* dark background for the navbar */
     padding: 20px 0;
     height: 100vh;
     width: 80px; /* narrow width for vertical navbar */
@@ -35,13 +35,20 @@ body{
     align-items: center;
     color: #ffffff;
     cursor: pointer;
+    
 }
 
-.nav_item:hover {
-    background-color: #333333; /* hover effect */
+.nav_item.active  {
+    background-color: #151515; /* hover effect */
     border-left: 4px solid #00BFFF;
+    width:73px;
+    transition: 0.1s ease-in-out;
 }
-
+.nav_item:hover{
+    background-color: #202020d2;
+    width:73px;
+    transition: 0.1s ease-in-out;
+}
 .icon {
     font-size: 35px;
 }
