@@ -8,7 +8,7 @@ import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined'
 import ControlPointSharpIcon from '@mui/icons-material/ControlPointSharp';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import EditModal from '../EditModal/EditModal';
-import { fetchStock } from '../../services/api';
+import { fetchStock, deleteStock } from '../../services/api';
 import { useNavigate } from 'react-router-dom';
 
 function Inventory() {
@@ -18,7 +18,7 @@ function Inventory() {
     const [selectedItem, setSelectedItem] = useState(null);
     
     let history=useNavigate();
-    const itemsPerPage = 5;
+    const itemsPerPage = 6;
 
     const displayItems = stock.slice((page - 1) * itemsPerPage, page * itemsPerPage);
     
@@ -64,23 +64,16 @@ function Inventory() {
       
       const handleStockDelete = async (item) => {
         try {
-          const response = await fetch(`/deleteStock?Name=${item?.Name}`, {
-            method: 'DELETE',
-          });
-      
-          const data = await response.json();
-      
-          if (response.status === 200) {
-            console.log(data.message);
-            console.log("Stock Deleted SuccessFully");
-            loadStock();
-            
-          } else {
-            console.error(data.message);
-          }
-        } catch (error) {
-          console.error('Error deleting Stock:', error);
-        }
+            const response = await deleteStock(item?.Name);
+             if (response.ok) {
+               console.log("Stock deleted SuccessFully");
+               loadStock();
+             } else {
+               console.error("Error in deletion");
+             }
+           } catch (error) {
+             console.error('Error deleting Stock:', error);
+           }
       };
 
   return (

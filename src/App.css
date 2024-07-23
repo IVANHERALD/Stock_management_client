@@ -2,7 +2,6 @@
   margin-left: 80px; /* same width as the navbar */
   padding: 20px;
   width: 100%; /* take up the remaining width */
-  height: 100vh; /* optional, ensures content fills the height */
-   /* ensures scrolling if content overflows */
+  
   background-color: #ffff; /* match body background color */
 }

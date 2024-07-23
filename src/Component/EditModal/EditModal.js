@@ -26,11 +26,12 @@ const style = {
 const EditModal = ({ open, handleClose, item }) => {
     
     const[quantity,setQuantity]=useState();
+
     const handleupdate=async(item)=>{
-        const response = updateStock(item?.Name,quantity);
         try {
-            if (response==200) {
-              console.log("updated successfully")
+          const response = await updateStock(item?.Name,quantity);
+            if (response.ok) {
+              console.log("updated successfully");
               handleClose();
             } else {
               console.log("Error in updation");

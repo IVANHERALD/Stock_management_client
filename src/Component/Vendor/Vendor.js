@@ -2,6 +2,7 @@ import '../Vendor/Vendor.css';
 
 import { Button, TextField } from '@mui/material'
 import React,{useState} from 'react'
+import { addVendor } from '../../services/api';
 
 function Vendor() {
     const [customer_id, setcustomer_id] = useState('')
@@ -10,7 +11,7 @@ function Vendor() {
     const [email, setemail] = useState('')
     const handleVendor = async () => {
         // Create a registration object with the user's data
-        const AddVendor = {
+        const vendorDetails = {
           customer_id,
           Name,
           Category,
@@ -19,23 +20,15 @@ function Vendor() {
         };
     
         try {
-          const response = await fetch('stock/addvendor', { // Replace with your server URL
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(AddVendor),
-          });
+          const response = await addVendor(vendorDetails);
+
           if (response.status === 201) {
-            // Registration was successful, you can handle success here
             console.log('Vendor Added Sucessfully');
             
           } else {
-            // Registration failed, handle the error
             console.error('Vendor Not added');
           }
         } catch (error) {
-          // Handle any network or other errors
           console.error('Error during Vendor adding:', error);
         }
       };

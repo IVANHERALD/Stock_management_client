@@ -2,7 +2,7 @@ import '../Vendor.css'
 
 import { Autocomplete, Button, TextField } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-
+import { fetchVendor } from '../../../services/api';
 function MailVendor() {
     const [Name,setName]=useState('');
     const [Category,setCategory]=useState('');
@@ -17,7 +17,7 @@ function MailVendor() {
 
         const fetchVendorDetails = async () => {
             try {
-                const response = await fetch('stock/fetchvendor');
+                const response = await fetchVendor();
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
