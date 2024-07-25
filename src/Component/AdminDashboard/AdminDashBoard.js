@@ -1,9 +1,9 @@
 import '../AdminDashboard/AdminDashBoard.css'
 
 import { Button, TextField } from '@mui/material'
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 
-import { addStock } from '../../services/api'
+import { addStock, fetchNextId } from '../../services/api'
 
 function AdminDashBoard() {
     const [id, setId] = useState('')
@@ -12,6 +12,24 @@ function AdminDashBoard() {
     const [Quantity, setQuantity] = useState('')
     const [Price, setPrice] = useState('')
 
+    async function fetchNextStockId() {
+      try{
+        const response = await fetchNextId();
+        if(response.ok)
+        {
+          const data = await response.json();
+          setId(data.nextId);
+        }
+      }
+      catch(error){
+        console.log(error);
+      }
+    }
+
+    useEffect(()=>{
+      fetchNextStockId();
+    },[])
+    
     const handleStock = async () => {
         const stockDetails = {
           id,
@@ -38,7 +56,7 @@ function AdminDashBoard() {
         <div className='admin_form'>
            {/* <div className='dashboard'>*/}
            <div className='title'>ADD STOCK</div>
-        <TextField variant='outlined' label="ID" value={id} onChange={(e)=>setId(e.target.value)} sx={{backgroundColor:"#ffff",borderRadius:'5px'}}/>
+        <TextField variant='outlined' label="ID" value={id} sx={{backgroundColor:"#ffff",borderRadius:'5px'}} disabled/>
         <TextField variant='outlined' label="Name" value={Name} onChange={(e)=>setName(e.target.value)} sx={{backgroundColor:"#ffff",borderRadius:'5px'}}/>
         <TextField variant='outlined' label="Category" value={Category} onChange={(e)=>setCategory(e.target.value)} sx={{backgroundColor:"#ffff",borderRadius:'5px'}}/>
         <TextField variant='outlined' label="Quantity" value={Quantity} onChange={(e)=>setQuantity(e.target.value)} sx={{backgroundColor:"#ffff",borderRadius:'5px'}}/>

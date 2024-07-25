@@ -4,6 +4,9 @@ export const fetchStock = async () => {
     return data;
 };
 
+export const fetchNextId = async() => {
+  return await fetch('/stock/getNextStockId');
+}
 export const fetchVendor = async() => {
   const response = await fetch('stock/fetchvendor');
   return response;
