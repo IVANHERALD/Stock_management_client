@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import { TextField } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import { updateStock } from '../../services/api';
+import { updateStock } from '../../services/stock';
 
 const style = {
   position: 'absolute',

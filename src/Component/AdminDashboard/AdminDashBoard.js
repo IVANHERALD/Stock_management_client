@@ -1,9 +1,8 @@
 import '../AdminDashboard/AdminDashBoard.css'
 
 import { Button, TextField } from '@mui/material'
-import React,{useState, useEffect} from 'react'
-
-import { addStock, fetchNextId } from '../../services/api'
+import React,{useEffect, useState} from 'react'
+import { addStock, fetchNextId } from '../../services/stock'
 
 function AdminDashBoard() {
     const [id, setId] = useState('')

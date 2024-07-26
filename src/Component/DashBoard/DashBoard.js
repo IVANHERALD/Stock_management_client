@@ -3,7 +3,7 @@ import '../AdminDashboard/AdminDashBoard.css'
 
 import { Autocomplete, Button, TextField } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { deductStock, fetchStock } from '../../services/api'
+import { deductStock, fetchStock } from '../../services/stock'
 
 function DashBoard() {
   const [stock, setStock] = useState([]);
@@ -40,6 +40,7 @@ function DashBoard() {
     <div>
       <div className="dashboard">
         <div className='title'>INVENTORY DEDUCTION</div><br /><br />
+        <div style={{ display: 'flex', flexDirection: 'column', width: '210px' }}>
         <Autocomplete
           freeSolo
           options={stock.map((item) => item.Name)}
@@ -49,7 +50,7 @@ function DashBoard() {
           onInputChange={(event, newInputValue) => setName(newInputValue)}
           renderInput={(params) => (
             <TextField {...params} label="Name" variant='outlined' sx={{ backgroundColor: "#ffff", borderRadius: '5px', width: "210px" }} onChange={(e) => setName(e.target.value)} />)}
-        /><br /><br />
+            /><br /><br /></div>
         <TextField label="Quantity" variant='outlined' sx={{ backgroundColor: "#ffff", borderRadius: '5px' }} onChange={(e) => setQuantity(e.target.value)} /><br /><br />
         <Button label="Update" variant='outlined' sx={{
           backgroundColor: "#ffff", borderRadius: '5px', borderColor: "black", color: "black", '&:hover': {

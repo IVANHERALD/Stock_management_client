@@ -1,11 +1,13 @@
+import './Navbar.css';
+
 import React, { useState } from 'react';
+
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import InventoryIcon from '@mui/icons-material/Inventory';
-import SettingsIcon from '@mui/icons-material/Settings';
-import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import Logo from '../../Asset/Ls.png';
+import SettingsIcon from '@mui/icons-material/Settings';
 import { useNavigate } from 'react-router-dom';
-import './Navbar.css';
 
 function Navbar() {
     const history = useNavigate();
@@ -30,7 +32,7 @@ function Navbar() {
                     <InventoryIcon className="icon" sx={{ fontSize: '35px' }} />
                     <span>Inventory</span>
                 </div>
-                <div className="nav_item">
+                <div className={`nav_item ${activeItem === '/Profile' ? 'active' : ''}`} onClick={() => handleItemClick('/Profile')}>
                     <SettingsIcon className="icon" sx={{ fontSize: '35px' }} />
                     <span>Settings</span>
                 </div>

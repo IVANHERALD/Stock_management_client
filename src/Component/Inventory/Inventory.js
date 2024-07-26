@@ -1,12 +1,14 @@
 import './Inventory.css';
+
 import { Button, IconButton, Pagination, Paper, Switch, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import { deleteStock, fetchStock } from '../../services/stock';
+
 import AssignmentTurnedInOutlinedIcon from '@mui/icons-material/AssignmentTurnedInOutlined';
 import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 import ControlPointSharpIcon from '@mui/icons-material/ControlPointSharp';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import EditModal from '../EditModal/EditModal';
-import { fetchStock, deleteStock } from '../../services/api';
 import { useNavigate } from 'react-router-dom';
 
 function Inventory() {
@@ -69,7 +71,7 @@ function Inventory() {
     };
 
     const mailVendor = () => {
-        let path = '/MailVendor';
+        let path = '/VendorTab';
         history(path);
     };
 

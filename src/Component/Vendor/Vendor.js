@@ -2,7 +2,8 @@ import '../Vendor/Vendor.css';
 
 import { Button, TextField } from '@mui/material'
 import React,{useState} from 'react'
-import { addVendor } from '../../services/api';
+
+import { addVendor } from '../../services/vendor';
 
 function Vendor() {
     const [customer_id, setcustomer_id] = useState('')

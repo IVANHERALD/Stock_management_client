@@ -2,7 +2,9 @@ import '../Vendor.css'
 
 import { Autocomplete, Button, TextField } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { fetchVendor } from '../../../services/api';
+
+import { fetchVendor } from '../../../services/vendor';
+
 function MailVendor() {
     const [Name,setName]=useState('');
     const [Category,setCategory]=useState('');

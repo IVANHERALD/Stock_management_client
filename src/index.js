@@ -1,15 +1,17 @@
+import './index.css';
+
+import App from './App';
+import MailVendor from './Component/Vendor/MailVendor/MailVendor';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import MailVendor from './Component/Vendor/MailVendor/MailVendor';
 import Vendor from './Component/Vendor/Vendor';
+import VendorTab from './Component/Vendor/VendorTab/VendorTab';
+import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App/>
   </React.StrictMode>
 );
 
