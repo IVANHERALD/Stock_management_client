@@ -10,7 +10,6 @@ function Profile() {
   const [companyname,setcompanyname]=useState();
   const [email,setemail]=useState();
   const [phonenumber,setphonenumber]=useState();
-   console.log(companyname,email,phonenumber);
    const handleupdate=async()=>{
     const adminDetails = {
       companyname,
@@ -33,7 +32,7 @@ function Profile() {
    
   return (
     <div className='admin_form'>
-      <div className='title' >  PROFILE</div>
+      <div className='title'> PROFILE</div>
       <div>
         <TextField variant='outlined' label="Company Name" sx={{ backgroundColor: "#ffff", borderRadius: '5px' }} onChange={(e)=>setcompanyname(e.target.value)}/><br/><br/>
         <TextField variant='outlined' label="E-mail" sx={{ backgroundColor: "#ffff", borderRadius: '5px' }} onChange={(e)=>setemail(e.target.value)}/><br/><br/>

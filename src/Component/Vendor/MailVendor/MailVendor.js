@@ -24,6 +24,7 @@ function MailVendor() {
                     throw new Error('Failed to fetch data');
                 }
                 const data = await response.json();
+                console.log("fetch vendor details" ,data);
                 setVendorDetails(data.VendorDetails1);
                 const categories = [...new Set(data.VendorDetails1.map(vendor => vendor.Category))];
                 setUniqueCategories(categories);

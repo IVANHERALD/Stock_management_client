@@ -12,4 +12,7 @@ export const fetchVendor = async() => {
       body: JSON.stringify(vendorDetails),
     });
     return response;
+  };
+  export const fetchNextId = async() => {
+    return await fetch('/stock/getNextVendorId');
   }
