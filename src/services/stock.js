@@ -1,5 +1,5 @@
 export const fetchStock = async () => {
-    const response = await fetch('/stock/fetchstock');
+    const response = await fetch('https://stock-management-server-7x4y.onrender.com/stock/fetchstock');
     const data = await response.json();
     return data;
 };
