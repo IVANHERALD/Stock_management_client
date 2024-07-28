@@ -1,10 +1,12 @@
+
+
 export const fetchVendor = async() => {
-    const response = await fetch('https://stock-management-server-7x4y.onrender.com/stock/fetchvendor');
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/stock/fetchvendor`);
     return response;
   }
   
   export const addVendor = async (vendorDetails) =>{
-    const response = await fetch('stock/addvendor', { 
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/stock/addvendor`, { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -14,5 +16,5 @@ export const fetchVendor = async() => {
     return response;
   };
   export const fetchNextId = async() => {
-    return await fetch('/stock/getNextVendorId');
+    return await fetch(`${process.env.REACT_APP_API_URL}/stock/getNextVendorId`);
   }

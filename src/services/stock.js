@@ -1,16 +1,16 @@
 export const fetchStock = async () => {
-    const response = await fetch('https://stock-management-server-7x4y.onrender.com/stock/fetchstock');
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/stock/fetchstock`);
     const data = await response.json();
     return data;
 };
 
 export const fetchNextId = async() => {
-  return await fetch('/stock/getNextStockId');
+  return await fetch(`${process.env.REACT_APP_API_URL}/stock/getNextStockId`);
 }
 
 
 export const addStock = async (stockDetails) => {
-    const response = await fetch('/stock/addstock', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/stock/addstock`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ export const addStock = async (stockDetails) => {
 
 
 export const updateStock = async(stockItemName, quantity) => {
-    const response = await fetch(`stock/updateQuantity?Name=${stockItemName}`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}stock/updateQuantity?Name=${stockItemName}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ export const updateStock = async(stockItemName, quantity) => {
   
 }
 export const deductStock=async(stockItemName,quantity)=>{
-    const response = await fetch(`stock/updateQuantity?Name=${stockItemName}`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/stock/updateQuantity?Name=${stockItemName}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ export const deductStock=async(stockItemName,quantity)=>{
 }
 
 export const deleteStock = async(stockItemName) =>{
-  const response = await fetch(`/stock/deleteStock?Name=${stockItemName}`, {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/stock/deleteStock?Name=${stockItemName}`, {
     method: 'DELETE',
   });
   return response;
