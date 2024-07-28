@@ -1,5 +1,5 @@
 export const fetchVendor = async() => {
-    const response = await fetch('https://stock-management-server-7x4y.onrender.com/stock/fetchvendor');
+    const response = await fetch('/stock/fetchvendor');
     return response;
   }
   
