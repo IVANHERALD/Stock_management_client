@@ -22,7 +22,7 @@ export const addStock = async (stockDetails) => {
 
 
 export const updateStock = async(stockItemName, quantity) => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}stock/updateQuantity?Name=${stockItemName}`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/stock/updateQuantity?Name=${stockItemName}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -73,8 +73,10 @@ function MailVendor() {
             `Best Regards,\n` +
             
             `[Lakshmi Engineering Industries]`;
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
     
-            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(gmailUrl, 'gmailComposeWindow', 'width=800,height=600');
           }
         }
       };
